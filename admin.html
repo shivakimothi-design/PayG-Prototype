@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiom Admin — PayG Content Manager</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="admin-header">
+  <div class="header-inner">
+    <div class="header-brand">Wiom Admin</div>
+    <div class="header-subtitle">PayG Video + Quiz Content Manager</div>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('partner')">Partner / Admin</button>
+    <button class="tab-btn" onclick="switchTab('rohit')">Rohit</button>
+  </div>
+
+  <!-- ===================== PARTNER TAB ===================== -->
+  <div id="tab-partner" class="tab-content active">
+
+    <!-- Video Upload -->
+    <section class="editor-section" style="border-radius: 0 0 12px 12px;">
+      <h2 class="section-title">Video</h2>
+      <div id="partner-video-upload" class="video-upload-area">
+        <div class="upload-icon">&#128249;</div>
+        <div class="upload-text">
+          वीडियो फ़ाइल यहाँ ड्रॉप करें या अपलोड करें
+          <small>MP4, WebM supported</small>
+        </div>
+        <button class="upload-btn" onclick="document.getElementById('partner-video-file').click()">Upload Video</button>
+        <input type="file" id="partner-video-file" accept="video/*" style="display:none" onchange="handleVideoFile('partner', this)">
+        <div class="upload-or">— या URL से —</div>
+        <div class="video-url-row">
+          <input type="text" id="partner-video-url" class="form-input" placeholder="Video URL paste करें (e.g. .mp4 link)">
+          <button class="btn-set-url" onclick="setVideoUrl('partner')">Set URL</button>
+        </div>
+      </div>
+      <div id="partner-video-preview" class="video-preview" style="display:none;">
+        <video controls preload="metadata"></video>
+      </div>
+      <div id="partner-video-info" style="display:none;">
+        <div id="partner-video-filename" class="video-filename"></div>
+        <button class="btn-remove-video" onclick="removeVideo('partner')">Remove Video</button>
+      </div>
+      <div class="form-group" style="margin-top:16px;">
+        <label for="partner-video-title">Video Screen Title</label>
+        <input type="text" id="partner-video-title" class="form-input">
+      </div>
+    </section>
+
+    <!-- Intro Modal Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Intro / Blocker Popup</h2>
+      <div class="form-group">
+        <label for="partner-intro-title">Title</label>
+        <input type="text" id="partner-intro-title" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="partner-intro-body">Body <span class="hint">(HTML allowed)</span></label>
+        <textarea id="partner-intro-body" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="partner-intro-cta">CTA Button Text</label>
+        <input type="text" id="partner-intro-cta" class="form-input">
+      </div>
+    </section>
+
+    <!-- Quiz Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Quiz Questions</h2>
+      <div id="partner-quiz-list"></div>
+      <button class="btn-secondary" onclick="addQuestion('partner')">+ Add Question</button>
+    </section>
+
+    <!-- Success Screen Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Success Screen</h2>
+      <div class="form-group">
+        <label for="partner-success-title">Title</label>
+        <input type="text" id="partner-success-title" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="partner-success-subtitle">Subtitle <span class="hint">(HTML allowed)</span></label>
+        <textarea id="partner-success-subtitle" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="partner-success-payout">Payout Text</label>
+        <input type="text" id="partner-success-payout" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="partner-success-note">Note</label>
+        <textarea id="partner-success-note" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="partner-success-cta">CTA Button Text</label>
+        <input type="text" id="partner-success-cta" class="form-input">
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions-bar">
+      <button class="btn-primary" onclick="saveConfig('partner')">Save Partner Config</button>
+      <button class="btn-danger" onclick="resetConfig('partner')">Reset to Defaults</button>
+      <button class="btn-secondary" onclick="previewFlow('partner')">Preview Partner Flow</button>
+    </section>
+  </div>
+
+  <!-- ===================== ROHIT TAB ===================== -->
+  <div id="tab-rohit" class="tab-content">
+
+    <!-- Video Upload -->
+    <section class="editor-section" style="border-radius: 0 0 12px 12px;">
+      <h2 class="section-title">Video</h2>
+      <div id="rohit-video-upload" class="video-upload-area">
+        <div class="upload-icon">&#128249;</div>
+        <div class="upload-text">
+          वीडियो फ़ाइल यहाँ ड्रॉप करें या अपलोड करें
+          <small>MP4, WebM supported</small>
+        </div>
+        <button class="upload-btn" onclick="document.getElementById('rohit-video-file').click()">Upload Video</button>
+        <input type="file" id="rohit-video-file" accept="video/*" style="display:none" onchange="handleVideoFile('rohit', this)">
+        <div class="upload-or">— या URL से —</div>
+        <div class="video-url-row">
+          <input type="text" id="rohit-video-url" class="form-input" placeholder="Video URL paste करें (e.g. .mp4 link)">
+          <button class="btn-set-url" onclick="setVideoUrl('rohit')">Set URL</button>
+        </div>
+      </div>
+      <div id="rohit-video-preview" class="video-preview" style="display:none;">
+        <video controls preload="metadata"></video>
+      </div>
+      <div id="rohit-video-info" style="display:none;">
+        <div id="rohit-video-filename" class="video-filename"></div>
+        <button class="btn-remove-video" onclick="removeVideo('rohit')">Remove Video</button>
+      </div>
+      <div class="form-group" style="margin-top:16px;">
+        <label for="rohit-video-title">Video Screen Title</label>
+        <input type="text" id="rohit-video-title" class="form-input">
+      </div>
+    </section>
+
+    <!-- Intro Modal Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Intro / Blocker Popup</h2>
+      <div class="form-group">
+        <label for="rohit-intro-title">Title</label>
+        <input type="text" id="rohit-intro-title" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="rohit-intro-body">Body <span class="hint">(HTML allowed)</span></label>
+        <textarea id="rohit-intro-body" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rohit-intro-cta">CTA Button Text</label>
+        <input type="text" id="rohit-intro-cta" class="form-input">
+      </div>
+    </section>
+
+    <!-- Quiz Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Quiz Questions</h2>
+      <div id="rohit-quiz-list"></div>
+      <button class="btn-secondary" onclick="addQuestion('rohit')">+ Add Question</button>
+    </section>
+
+    <!-- Success Screen Editor -->
+    <section class="editor-section">
+      <h2 class="section-title">Success Screen</h2>
+      <div class="form-group">
+        <label for="rohit-success-title">Title</label>
+        <input type="text" id="rohit-success-title" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="rohit-success-subtitle">Subtitle <span class="hint">(HTML allowed)</span></label>
+        <textarea id="rohit-success-subtitle" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rohit-success-payout">Payout Text</label>
+        <input type="text" id="rohit-success-payout" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="rohit-success-note">Note</label>
+        <textarea id="rohit-success-note" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rohit-success-cta">CTA Button Text</label>
+        <input type="text" id="rohit-success-cta" class="form-input">
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions-bar">
+      <button class="btn-primary" onclick="saveConfig('rohit')">Save Rohit Config</button>
+      <button class="btn-danger" onclick="resetConfig('rohit')">Reset to Defaults</button>
+      <button class="btn-secondary" onclick="previewFlow('rohit')">Preview Rohit Flow</button>
+    </section>
+  </div>
+
+  <div id="toast" class="admin-toast"></div>
+
+</main>
+
+<script src="quiz-data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
