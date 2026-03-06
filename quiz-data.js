@@ -10,7 +10,7 @@ const defaultPartnerConfig = {
     cta: "शुरू करें"
   },
   video: {
-    url: "",
+    url: "PayG_Video_Partner.mp4",
     title: "PayG समझें — वीडियो देखें"
   },
   quiz: [
@@ -86,7 +86,7 @@ const defaultRohitConfig = {
     cta: "शुरू करें"
   },
   video: {
-    url: "",
+    url: "PayG_Video_Rohit.mp4",
     title: "PayG Training — वीडियो देखें"
   },
   quiz: [
