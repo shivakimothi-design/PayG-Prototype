@@ -15,125 +15,59 @@ const defaultPartnerConfig = {
   },
   quiz: [
     {
-      question: "PayG मॉडल में कस्टमर कितने दिन का रिचार्ज कर सकता है?",
+      question: "PayG connection बुक होने के लिए customer सबसे पहले क्या देता है?",
       options: [
-        "सिर्फ 30 दिन",
-        "सिर्फ 7 दिन",
-        "जितने दिन चाहे (1 दिन, 7 दिन, 28 दिन आदि)",
-        "2 दिन ही"
-      ],
-      correct: 2,
-      explanation: "PayG में कस्टमर अपनी ज़रूरत के हिसाब से 1, 7, 28 या कितने भी दिन का रिचार्ज कर सकता है।"
-    },
-    {
-      question: "PayG सेटअप में कस्टमर से कितनी फीस ली जाती है?",
-      options: [
-        "₹300 सिक्योरिटी फीस",
-        "₹300 + इंस्टॉलेशन फीस",
-        "₹500 एडवांस",
-        "₹300 + रिचार्ज अमाउंट"
-      ],
-      correct: 0,
-      explanation: "कस्टमर से सिर्फ ₹300 सिक्योरिटी फीस ली जाती है। इसके अलावा कोई और पेमेंट नहीं।"
-    },
-    {
-      question: "₹300 सिक्योरिटी फीस के अलावा क्या कोई और पेमेंट लेने की अनुमति है?",
-      options: [
-        "हाँ, अगर कस्टमर माने",
-        "हाँ, इंस्टॉलेशन के समय",
-        "नहीं, कोई और पेमेंट नहीं",
-        "पार्टनर की इच्छा पर"
-      ],
-      correct: 2,
-      explanation: "₹300 के अलावा किसी भी तरह का कोई और पेमेंट लेना सख्त मना है।"
-    },
-    {
-      question: "अगर कस्टमर कैश में पेमेंट करना चाहता है तो सही तरीका क्या है?",
-      options: [
-        "पार्टनर कैश ले सकता है",
-        "कस्टमर QR कोड स्कैन करवा कर किसी से UPI पेमेंट करवा सकता है",
-        "कैश सीधे ऑफिस में जमा करना होगा",
-        "कैश लेने की अनुमति है"
+        "₹300 security fee",
+        "₹100 booking fee",
+        "₹500 advance",
+        "₹100 recharge"
       ],
       correct: 1,
-      explanation: "पार्टनर कैश नहीं ले सकता। कस्टमर QR स्कैन करवा कर किसी और से UPI पेमेंट करवा सकता है।"
+      explanation: "PayG connection बुक करने के लिए customer सबसे पहले ₹100 booking fee देता है।"
     },
     {
-      question: "हर सफल इंस्टॉल पर पार्टनर को कितना मिलता है?",
+      question: "Connection लगने के दिन customer को क्या देना होता है?",
       options: [
-        "₹200",
-        "₹300",
-        "₹500",
-        "कस्टमर के रिचार्ज पर निर्भर"
-      ],
-      correct: 1,
-      explanation: "हर सफल इंस्टॉल पर पार्टनर को ₹300 का फिक्स्ड पेआउट मिलता है।"
-    },
-    {
-      question: "अगर कस्टमर 30 दिन में सिर्फ 1 दिन का रिचार्ज करे तो पार्टनर के ₹300 पर क्या असर होगा?",
-      options: [
-        "पार्टनर का पैसा कट जाएगा",
-        "आधा मिलेगा",
-        "पूरा ₹300 तय रहेगा",
-        "कुछ नहीं मिलेगा"
+        "₹100 booking fee",
+        "₹300 installation fee",
+        "₹300 NetBox security fee",
+        "₹300 recharge"
       ],
       correct: 2,
-      explanation: "कस्टमर कितना भी रिचार्ज करे, पार्टनर का ₹300 पेआउट फिक्स्ड है। कोई असर नहीं पड़ता।"
+      explanation: "Connection लगने के दिन customer को ₹300 NetBox security fee देनी होती है।"
     },
     {
-      question: "PayG सेटअप के बाद कस्टमर को कितने दिन का नेट शुरू में मिलता है?",
+      question: "Connection लगने के बाद internet शुरू में कितने दिन चलता है?",
       options: [
         "1 दिन",
         "2 दिन",
-        "7 दिन",
-        "30 दिन"
+        "5 दिन",
+        "7 दिन"
       ],
       correct: 1,
-      explanation: "सेटअप के बाद कस्टमर को शुरू में 2 दिन का इंटरनेट मिलता है।"
+      explanation: "Connection लगने के बाद internet शुरू में 2 दिन चलता है।"
     },
     {
-      question: "क्या पार्टनर अपनी मर्जी से किसी कस्टमर का इंस्टॉलेशन मना कर सकता है?",
+      question: "PayG मॉडल में customer internet कैसे चलाता है?",
       options: [
-        "हाँ",
-        "सिर्फ दूर होने पर",
-        "नहीं, सिस्टम से आया कनेक्शन लगाना अनिवार्य है",
-        "अगर कस्टमर कम रिचार्ज करे"
-      ],
-      correct: 2,
-      explanation: "सिस्टम से असाइन हुआ हर कनेक्शन लगाना अनिवार्य है। मना करना नियम के खिलाफ है।"
-    },
-    {
-      question: "क्या PayG में पार्टनर को कोई नई फीस देनी होती है?",
-      options: [
-        "हाँ, जॉइनिंग फीस",
-        "हाँ, सिक्योरिटी फीस",
-        "नहीं, कोई नई फीस नहीं",
-        "हर महीने फीस देनी होती है"
-      ],
-      correct: 2,
-      explanation: "PayG में पार्टनर को कोई नई फीस नहीं देनी होती। सब कुछ पहले जैसा ही है।"
-    },
-    {
-      question: "इंस्टॉलेशन के समय कस्टमर कहता है:\n\"मैं ₹300 के अलावा ₹500 इंस्टॉलेशन के लिए दे देता हूँ, जल्दी लगा दो।\"\n\nआप क्या करेंगे?",
-      options: [
-        "₹800 लेकर इंस्टॉल कर देंगे",
-        "₹300 लेकर बाकी मना कर देंगे",
-        "सिर्फ ₹300 सिक्योरिटी फीस ही लेंगे, बाकी लेने की अनुमति नहीं",
-        "पहले पैसा लेकर बाद में सिस्टम में डाल देंगे"
-      ],
-      correct: 2,
-      explanation: "सिर्फ ₹300 सिक्योरिटी फीस लेने की अनुमति है। इसके अलावा किसी भी तरह का पेमेंट लेना मना है।"
-    },
-    {
-      question: "पहले नियम में अगर कस्टमर पहले महीने के बाद Wiom छोड़ देता था (churn करता था) तो पार्टनर को ₹300 मिलते थे।\n\nPayG के नए नियम में यह क्या स्थिति है?",
-      options: [
-        "वही पुराना नियम लागू रहेगा",
-        "अब churn पर ₹300 नहीं मिलते",
-        "₹300 दोगुना मिलते हैं",
-        "कस्टमर पर निर्भर करता है"
+        "हर महीने 30 दिन का recharge करना जरूरी है",
+        "customer अपनी जरूरत के अनुसार किसी भी दिन का recharge कर सकता है",
+        "केवल 7 दिन का recharge कर सकता है",
+        "केवल 30 दिन का recharge कर सकता है"
       ],
       correct: 1,
-      explanation: "नए PayG नियम में churn पर ₹300 नहीं मिलते। अब पेआउट सिर्फ नए सफल इंस्टॉल पर मिलता है।"
+      explanation: "PayG मॉडल में customer अपनी जरूरत के अनुसार किसी भी दिन का recharge कर सकता है।"
+    },
+    {
+      question: "Partner को PayG payout पाने के लिए क्या सुनिश्चित करना होता है?",
+      options: [
+        "Customer 30 दिन का recharge करे",
+        "ISP recharge पूरे 30 दिन का active रहे",
+        "Customer रोज recharge करे",
+        "Customer 100 Mbps plan ले"
+      ],
+      correct: 1,
+      explanation: "Partner को PayG payout पाने के लिए ISP recharge पूरे 30 दिन का active रहना चाहिए।"
     }
   ],
   success: {
@@ -157,66 +91,66 @@ const defaultRohitConfig = {
   },
   quiz: [
     {
-      question: "PayG मॉडल में connection शुरू करने के लिए कस्टमर से कुल कितनी राशि ली जाती है?",
+      question: "Customer connection बुक करते समय क्या देता है?",
       options: [
-        "₹100 booking fee only",
-        "₹100 booking fee + ₹300 security fee",
+        "₹300 security fee",
+        "₹100 booking fee",
         "₹500 advance",
-        "₹300 security fee only"
+        "₹100 recharge"
       ],
       correct: 1,
-      explanation: "Connection बुक करते समय ₹100 booking fee + ₹300 security fee = कुल ₹400 लिया जाता है।"
+      explanation: "Customer connection बुक करते समय ₹100 booking fee देता है।"
     },
     {
-      question: "PayG में कस्टमर का पहला इंटरनेट कितने दिन का होता है?",
+      question: "Connection लगने के समय customer क्या देता है?",
+      options: [
+        "₹300 NetBox security fee",
+        "₹300 recharge",
+        "₹100 booking fee",
+        "₹500 advance"
+      ],
+      correct: 0,
+      explanation: "Connection लगने के समय customer ₹300 NetBox security fee देता है।"
+    },
+    {
+      question: "Connection लगने के बाद internet कितने दिन अपने आप चलता है?",
       options: [
         "1 दिन",
         "2 दिन",
-        "7 दिन",
-        "30 दिन"
+        "5 दिन",
+        "10 दिन"
       ],
       correct: 1,
-      explanation: "सेटअप के बाद कस्टमर को शुरू में 2 दिन का फ्री इंटरनेट मिलता है।"
+      explanation: "Connection लगने के बाद internet 2 दिन अपने आप चलता है।"
     },
     {
-      question: "₹300 सिक्योरिटी फीस कब वापस मिलती है?",
+      question: "PayG में customer recharge कैसे कर सकता है?",
       options: [
-        "30 दिन बाद automatically",
-        "जब कस्टमर device वापस करे और system verify करे",
-        "कभी नहीं",
-        "पहले recharge के बाद"
-      ],
-      correct: 1,
-      explanation: "Device वापसी + System verification के बाद ₹300 कस्टमर को refund होता है।"
-    },
-    {
-      question: "Partner का ISP recharge कितने दिन का होता है?",
-      options: [
-        "कस्टमर के recharge जितना",
-        "हमेशा 7 दिन",
-        "हमेशा 30 दिन",
-        "कोई recharge नहीं"
+        "केवल 30 दिन का",
+        "केवल 7 दिन का",
+        "अपनी जरूरत के अनुसार किसी भी दिन का",
+        "केवल महीने में एक बार"
       ],
       correct: 2,
-      explanation: "कस्टमर कितने भी दिन का recharge करे, partner का ISP recharge हमेशा 30 दिन का रहता है।"
+      explanation: "PayG में customer अपनी जरूरत के अनुसार किसी भी दिन का recharge कर सकता है।"
     },
     {
-      question: "कस्टमर का recharge partner की earning पर असर करता है?",
+      question: "Customer को ₹300 security fee कब वापस मिलती है?",
       options: [
-        "हाँ, कम recharge = कम earning",
-        "नहीं, ₹300 fixed है",
-        "कस्टमर पर depend करता है",
-        "हाँ, ज़्यादा recharge = ज़्यादा earning"
+        "जब customer recharge बंद कर देता है",
+        "जब NetBox वापस करता है और system उसे verify करता है",
+        "30 दिन बाद automatically",
+        "Rohit को वापस देने पर"
       ],
       correct: 1,
-      explanation: "Partner को ₹300 प्रति इंस्टॉल fixed मिलता है — कस्टमर के recharge से कोई फ़र्क नहीं पड़ता।"
+      explanation: "Customer को ₹300 security fee तब वापस मिलती है जब NetBox वापस करता है और system उसे verify करता है।"
     }
   ],
   success: {
     title: "Training Complete!",
     subtitle: 'आपने PayG मॉडल की सभी ज़रूरी बातें समझ ली हैं।',
     payout: "PayG Certified",
-    note: "अब आप partners को PayG मॉडल के बारे में सही जानकारी दे सकते हैं।",
+    note: "अब आप customers को PayG मॉडल के बारे में सही जानकारी दे सकते हैं।",
     cta: "पूरा हुआ"
   }
 };
